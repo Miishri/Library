@@ -1,28 +1,46 @@
 const plus = document.getElementById('add');
 const form = document.querySelector('.newBook');
 
-let bookShelf = [];
+let shelf: Book[] = [];
 
 class Book {
-    constructor(title, author, pages, read) {
+    private title: string;
+    private author:string;
+    private pages:number;
+    private read:boolean;
+
+    constructor(title:string, author:string, pages:number, read:boolean) {
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.read = read;
     }
     
-    author() {
+    get Author(): string {
         return this.author;
     }
-    title() {
+    get Title(): string {
         return this.title;
     }
-    pages() {
+    get Pages(): number {
         return this.pages;
     }
-    read() {
+    get Read(): boolean {
         return this.read;
+    }
+
+    set Author(value: string) {
+        this.author = value;
+    }
+    set Title(value: string){
+        this.title = value;
+    }
+    set Pages(value: number) {
+        this.pages = value;
+    }
+    set Read(value: boolean) {
+        this.read = value;
     }
 }
 
-const makeBook = new Book("thomas", "bob", )
+const book = new Book("thomas", "bob", 3, true)
