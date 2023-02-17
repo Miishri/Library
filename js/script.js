@@ -1,6 +1,3 @@
-var plus = document.getElementById('add');
-var form = document.querySelector('.newBook');
-var shelf = [];
 var Book = /** @class */ (function () {
     function Book(title, author, pages, read) {
         this.title = title;
@@ -50,5 +47,8 @@ var Book = /** @class */ (function () {
     });
     return Book;
 }());
+var plus = document.getElementById('add');
+var form = document.querySelector('.newBook');
+var shelf = [];
 var book = new Book("thomas", "bob", 3, true);
 //# sourceMappingURL=script.js.map

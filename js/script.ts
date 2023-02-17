@@ -1,8 +1,3 @@
-const plus = document.getElementById('add');
-const form = document.querySelector('.newBook');
-
-let shelf: Book[] = [];
-
 class Book {
     private title: string;
     private author:string;
@@ -42,5 +37,10 @@ class Book {
         this.read = value;
     }
 }
+
+const plus = document.getElementById('add');
+const form = document.querySelector('.newBook');
+
+let shelf: Book[] = [];
 
 const book = new Book("thomas", "bob", 3, true)
