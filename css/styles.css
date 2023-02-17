@@ -1,11 +1,53 @@
+button {
+    border: 0;
+    background: none;
+}
+button:focus {
+    border: none;
+}
+button:active {
+    border: none;
+}
+
 .shelf {
     border: 20px solid  rgb(222,184,135);
-    min-height: 901px;
+    height: 100%;
 }
 
 .panel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     margin-left: 80%;
     min-width: 20%;
-    height: 901px;
+    height: 95.7vh;
     background-color: rgba(139,69,19, 0.50);
+}
+
+.add {
+    margin-top: 10px;
+    width: 60%;
+    height: 25%;
+}
+.add:hover {
+    scale: 1.05;
+}
+.add:active { 
+    scale: 1.1;
+}
+
+
+@media all and (max-width:400px) {
+    .shelf {
+        border: 10px solid  rgb(222,184,135);
+        height: 98vh;
+    }
+    .panel {
+        margin: 0;
+        height: 30%;
+    }
+    .add {
+        height: 25%;
+        width: 25%;
+    }
 }
