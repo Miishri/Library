@@ -1,0 +1,11 @@
+.shelf {
+    border: 20px solid  rgb(222,184,135);
+    min-height: 901px;
+}
+
+.panel {
+    margin-left: 80%;
+    min-width: 20%;
+    height: 901px;
+    background-color: rgba(139,69,19, 0.50);
+}
