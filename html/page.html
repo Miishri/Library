@@ -13,20 +13,27 @@
         <div class="panel">
             <button id="add"><img src="/icons/plus.svg" alt="plus button"></button>
             <div class="newBook" style="visibility: hidden;">
-                <form class="bookForm">
+                <form id="bookForm">
                     <label for="title">
-                        Name <br> <input id="title" autocomplete="off" type="text" name="book_name" required>
+                        Title <br> <input 
+                        id="title" 
+                        pattern="[a-zA-Z]*" 
+                        autocomplete="off" 
+                        type="text" 
+                        name="book_name" 
+                        required
+                        >
                     </label>
                     <label for="author">
                         Author <br> <input id="author" autocomplete="off" type="text" name="book_author" required>
                     </label>
                     <label for="pages">
-                        Pages <br> <input id="pages" type="number" name="book_pages" min="1" required>
+                        Pages <br> <input id="pages" type="number" name="book_pages" min="1" max="1600" required>
                     </label>
                     <label for="read">
                         Read <br> <input id="read" type="checkbox" name="book_read">
                     </label>
-                    <button id="addButton" type="submit">Add</button>
+                    <button id="addButton" type="submit">Add</input>
                 </form>
             </div>
         </div>

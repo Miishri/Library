@@ -1,54 +1,47 @@
-var Book = /** @class */ (function () {
-    function Book(title, author, pages, read) {
+"use strict";
+class Book {
+    constructor(title, author, pages, read) {
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.read = read;
     }
-    Object.defineProperty(Book.prototype, "Author", {
-        get: function () {
-            return this.author;
-        },
-        set: function (value) {
-            this.author = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Book.prototype, "Title", {
-        get: function () {
-            return this.title;
-        },
-        set: function (value) {
-            this.title = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Book.prototype, "Pages", {
-        get: function () {
-            return this.pages;
-        },
-        set: function (value) {
-            this.pages = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Book.prototype, "Read", {
-        get: function () {
-            return this.read;
-        },
-        set: function (value) {
-            this.read = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return Book;
-}());
-var plus = document.getElementById('add');
-var form = document.querySelector('.newBook');
-var shelf = [];
-var book = new Book("thomas", "bob", 3, true);
+    get Author() {
+        return this.author;
+    }
+    get Title() {
+        return this.title;
+    }
+    get Pages() {
+        return this.pages;
+    }
+    get Read() {
+        return this.read;
+    }
+    set Author(value) {
+        this.author = value;
+    }
+    set Title(value) {
+        this.title = value;
+    }
+    set Pages(value) {
+        this.pages = value;
+    }
+    set Read(value) {
+        this.read = value;
+    }
+}
+let shelf = [];
+const book = new Book("thomas", "bob", 3, true);
+const plus = document.getElementById('add');
+const display = document.querySelector('.newBook');
+plus.addEventListener('click', () => {
+    display.setAttribute('style', 'visiblity: visible;');
+});
+const addBook = document.getElementById('addButton');
+const form = document.getElementById('bookForm');
+addBook.addEventListener('click', (e) => {
+    e.preventDefault();
+    display.setAttribute('style', 'visiblity: hidden;');
+});
 //# sourceMappingURL=script.js.map

@@ -38,9 +38,20 @@ class Book {
     }
 }
 
-const plus = document.getElementById('add');
-const form = document.querySelector('.newBook');
-
 let shelf: Book[] = [];
+const book = new Book("thomas", "bob", 3, true);
 
-const book = new Book("thomas", "bob", 3, true)
+const plus = document.getElementById('add');
+const display = document.querySelector('.newBook');
+
+plus.addEventListener('click', () => {
+    display.setAttribute('style', 'visiblity: visible;');
+})
+
+const addBook = document.getElementById('addButton');
+
+const form: HTMLFormElement = <HTMLFormElement> document.getElementById('bookForm');
+addBook.addEventListener('click', (e) => {
+    e.preventDefault();
+    display.setAttribute('style', 'visiblity: hidden;');
+})
