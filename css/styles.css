@@ -1,4 +1,5 @@
 body {
+    overflow: hidden;
     background-color: rgba(222,184,135, 0.7);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -24,21 +25,56 @@ input {
 input:focus {
     outline: 2px solid grey;
 }
+*::-webkit-scrollbar {
+    display: none;
+}
 
 .shelf {
+    overflow: auto;    
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
     border: 20px solid  rgb(222,184,135);
-    height: 100%;
+    height: 95.8vh;
 }
+
 .panel {
+    top: 0;
+    position: sticky;
+    grid-column: 5;
     display: flex;
     flex-direction: column;
     gap: 5%;
     align-items: center;
-    min-width: 20%;
-    margin-left: 80%;
-    height: 95.7vh;
+    height: 95.9vh;
     background-color: rgba(139,69,19, 0.50);
 }
+
+.library {
+    height: 100rem;
+    width: 93rem;
+    display: grid;
+    margin: 10px;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-row: 1;
+    grid-column: span 4;
+}
+
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    gap: 15px;
+    border: 10px solid rgba(139,69,19, 0.50);
+}
+
+.book * {
+    margin-top: 30px;
+}
+
 
 #add {
     margin-top: 10px;
@@ -80,6 +116,13 @@ input:focus {
 }
 #addButton:hover {
     border: .5px solid white;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+input:valid {
+    border: 1px solid green;
 }
 
 @media all and (max-width:400px) {
